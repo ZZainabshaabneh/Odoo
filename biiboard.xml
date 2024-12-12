@@ -1,0 +1,87 @@
+<odoo>
+    <record id="sk_config_tree_view" model="ir.ui.view">
+        <field name="name">sk.config</field>
+        <field name="model">sk_config</field>   
+        <field name="arch" type="xml">
+            <tree>                             
+              <field name="name"/>
+                <field name="location" required="1"/>
+             <field name="width"/>
+                <field name="height"/>
+                <!-- <field name="binary"/>
+                -->
+             
+            </tree>
+        </field>
+    </record>    
+    
+    <record id="sk_config_form_view" model="ir.ui.view">
+        <field name="name">sk.config</field>
+        <field name="model">sk_config</field>   
+        <field name="arch" type="xml">
+            <form>
+                <group>  
+               <group>  
+                    <field name="name"/>
+                    <field name="txt" readonly="1"/>
+                    
+                   <field name="state" readonly="1"/>
+                   <field name="avaliable"/>
+                     <field name="maintaine"/>
+                     
+                </group>
+                    <group> 
+                         <field name="binary" nolabel="1"/>            
+                    </group>  
+                   
+                      <notebook>
+                        <!-- First Tab -->
+                        <page string="Information">
+                            <group>
+                               <group> 
+                              <field name="Billtype" required="1"/>
+                                 <field name="city" required="1"/>
+                                 <field name="BBCODE"/>
+                                 <field name="shape"/>
+                                 <field name="BB"/>
+                                <field name="width"/>
+                                <field name="height"/>
+                                 </group>
+                             <group> 
+                            
+                              <field name="location"/>
+                                 <field name="district" required="1"/>
+                                 <field name="cat" string ="Category"/>
+                                 <field name="mat" string="Material"/>
+                                 
+                                 </group>
+
+                                
+                            </group>
+                        </page>
+
+                        <!-- Second Tab -->
+                        <page string="Billboard Reservation">
+                            <group>
+                           
+                            </group>
+                        </page>
+
+             <page string="Descriptions">
+                            <group>
+                          
+                            </group>
+                        </page>
+                    </notebook>
+               
+               </group> 
+            </form>
+        </field>
+    </record>    
+    
+<record id="sk_config_action" model="ir.actions.act_window">
+        <field name="name">Billboard</field>
+        <field name="res_model">sk_config</field>   
+        <field name="view_mode">tree,form</field>
+    </record>        
+</odoo>

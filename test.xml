@@ -1,0 +1,116 @@
+<odoo>
+    <record id="sk_test_tree_view" model="ir.ui.view">
+        <field name="name">sk.test</field>
+        <field name="model">sk_test</field>   
+        <field name="arch" type="xml">
+            <tree>              
+              <!-- <field name="name"/>
+              <field name="value"/> -->
+            </tree>
+        </field>
+    </record>    
+    
+    <record id="sk_test_form_view" model="ir.ui.view">
+        <field name="name">sk.test</field>
+        <field name="model">sk_test</field>   
+        <field name="arch" type="xml">
+            <form>
+                <group>  
+                    <!-- <group>  
+                      <field name="name"/>
+                      <field name="value"/>         
+                    </group>                    -->
+               </group> 
+            </form>
+        </field>
+    </record>    
+    
+<record id="sk_test_action" model="ir.actions.act_window">
+        <field name="name">Billboard</field>
+        <field name="res_model">sk_config</field>   
+        <field name="view_mode">tree,form</field>
+</record>  
+    
+ <record id="sk_district_action" model="ir.actions.act_window">
+        <field name="name">District</field>
+        <field name="res_model">sk_district</field>   
+        <field name="view_mode">tree,form</field>
+</record>    
+
+    <record id="sk_location_action" model="ir.actions.act_window">
+        <field name="name">Location</field>
+        <field name="res_model">sk_location</field>   
+        <field name="view_mode">tree,form</field>
+    </record>    
+
+        
+<record id="sk_city_action" model="ir.actions.act_window">
+        <field name="name">City</field>
+        <field name="res_model">sk_city</field>   
+        <field name="view_mode">tree,form</field>
+    </record>    
+    
+<record id="sk_reservation_action" model="ir.actions.act_window">
+        <field name="name">Reservation</field>
+        <field name="res_model">sk_reservation</field>
+        <field name="view_mode">tree,form</field>
+        
+    </record>    
+    
+<record id="sk_config_action" model="ir.actions.act_window">
+        <field name="name">Billboard</field>
+        <field name="res_model">sk_config</field>   
+        <field name="view_mode">tree,form</field>
+</record>  
+    
+<record id="sk_billtype_action" model="ir.actions.act_window">
+    <field name="name">Billboard Type</field>
+    <field name="res_model">sk_billtype</field>   
+    <field name="view_mode">tree,form</field>
+</record>  
+    
+<menuitem id="sk_test_root_menu" name="Sky Mangement"/>
+   
+<menuitem id="sk_test_root_Reservation_menu" 
+    action="sk_test_action" 
+    name="Reservation " 
+    parent="sk_test_root_menu"  />
+    
+    <menuitem id="sk_reservation_menu"
+              name="Reservation list"
+              action="sk_reservation_action"
+              parent="sk_test_root_Reservation_menu"/> 
+    
+  <menuitem id="sk_test_Configuration_root_menu" 
+    action="sk_test_action"  
+    name="Configuration "  
+    parent="sk_test_root_menu" />
+   
+<menuitem id="sk_test_Configuration_sub_root_menu" 
+    name="Billboard" 
+    parent="sk_test_Configuration_root_menu"/>
+
+<menuitem id="billboard_menu" 
+   action="sk_config_action" 
+    name=" Billboard" 
+    parent="sk_test_Configuration_sub_root_menu"/>
+    
+<menuitem id="billboard2_menu" 
+    action="sk_billtype_action" 
+    name=" Billboard Type" 
+    parent="sk_test_Configuration_sub_root_menu"/>
+    
+ <menuitem id="city" 
+    name="City" 
+    action="sk_city_action"  
+    parent="sk_test_Configuration_root_menu"/>
+    
+    <menuitem id="district" 
+    name="District" 
+    action="sk_district_action"  
+    parent="sk_test_Configuration_root_menu"/>
+    <menuitem id="location" 
+    name="Location" 
+    action="sk_location_action"  
+    parent="sk_test_Configuration_root_menu"/>
+</odoo>

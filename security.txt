@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sk_test,sk_test,model_sk_test,base.group_user,1,1,1,1
+access_sk_config,sk_config,model_sk_config,base.group_user,1,1,1,1
+access_sk_billtype,sk_billtype,model_sk_billtype,base.group_user,1,1,1,1
+access_sk_district,sk_district,model_sk_district,base.group_user,1,1,1,1
+access_sk_city,sk_city,model_sk_city,base.group_user,1,1,1,1
+access_sk_location,sk_location,model_sk_location,base.group_user,1,1,1,1
+access_sk_reservation,sk_reservation,model_sk_reservation,base.group_user,1,1,1,1

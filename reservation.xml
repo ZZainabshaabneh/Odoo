@@ -1,0 +1,104 @@
+ <odoo>
+    <record id="sk_reservation_tree_view" model="ir.ui.view">
+        <field name="name">sk.reservation</field>
+        <field name="model">sk_reservation</field>   
+        <field name="arch" type="xml">
+            <tree>
+              <!-- <field name="name"/>
+              <field name="district"/>
+             <field name="city"/>  -->
+            </tree>
+        </field>
+    </record>    
+    
+    <record id="sk_reservation_form_view" model="ir.ui.view">
+        <field name="name">sk.reservation</field>
+        <field name="model">sk_reservation</field>   
+        <field name="arch" type="xml">
+            <form>
+                <group>  
+                    
+                   <group>                         
+                        <field name="invoice_id" string="Customer Name"/>
+                        <field name="Address" string="Invoice Address"/>                      
+                    </group>
+                    
+                    <group>
+                        <field name="Ordering_contact"/>
+                        <field name="proname" string="Project Name"/> 
+                    </group>
+                    
+                      
+                   <notebook>
+                        <!-- First Tab -->
+                       <page string="Billboard schedule">
+                            <group> 
+                                 
+                               <group> 
+                                 <field name="Start_Date"/>
+                                 <field name="End_Date"/>
+                                 <field name="table" string="Table(Months/Days)"/>                                   
+
+                                   <div class="oe_title">
+                                   <table class="table table-striped table-bordered">
+                                   <thead>
+                                        <tr>
+                                            <th>Billboards</th>
+                                            <th>Oct</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Placeholder row (can be filled dynamically via JS if needed) -->
+                                        <tr>
+                                            <td colspan="2" class="text-center">No Data</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            </group>
+                                
+                             <group>  
+                                 <field name="district"/>
+                                 <field name="city"/> 
+                                 <field name="name" string="Location"/>                           
+                              </group>  
+                                
+                            </group> 
+                        </page>
+                    </notebook> 
+                                     
+                     <notebook>
+                        <!-- First Tab -->
+                         <page string="Reservation Line">
+                             <group> 
+
+                               <group>
+                                   
+                                <field name="reservation_line_ids">
+                                    <tree editable="bottom">
+                                        <field name="Start_Date"/>
+                                        <field name="End_Date"/>
+                                        <field name="billboard_list" widget="many2many_tags"/>
+                                    </tree>
+                                </field>
+                                   
+                               </group>  
+                                 
+                           </group> 
+                        </page>
+                    </notebook> 
+                  
+
+                </group> 
+            </form>
+        </field>
+    </record>    
+    
+<record id="sk_reservation_action" model="ir.actions.act_window">
+        <field name="name">Reservation</field>
+        <field name="res_model">sk_reservation</field>   
+        <field name="view_mode">tree,form</field>
+    </record>    
+    
+</odoo>

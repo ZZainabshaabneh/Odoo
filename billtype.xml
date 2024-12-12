@@ -1,0 +1,35 @@
+<odoo>
+    <record id="sk_billtype_tree_view" model="ir.ui.view">
+        <field name="name">sk_billtype</field>
+        <field name="model">sk_billtype</field>   
+        <field name="arch" type="xml">
+            <tree>
+              <field name="name"/>
+            </tree>
+        </field>
+    </record>    
+    
+    <record id="sk_billtype_form_view" model="ir.ui.view">
+        <field name="name">sk_billtype</field>
+        <field name="model">sk_billtype</field>   
+        <field name="arch" type="xml">
+            <form>
+                <group>  
+               <group>  
+                <field name="name"/>
+                </group>
+               </group> 
+            </form>
+        </field>
+    </record>    
+    
+<record id="sk_billtype_action" model="ir.actions.act_window">
+    <field name="name">Billboard Type</field>
+    <field name="res_model">sk_billtype</field>   
+    <field name="view_mode">tree,form</field>
+</record>    
+     
+ 
+
+    
+</odoo>
